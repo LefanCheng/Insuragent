@@ -2,6 +2,8 @@
 
 A structured template system for managing project issues locally. This system provides a clear, file-based approach to track user stories, features, bugs, and tests.
 
+English | [简体中文](README_zh.md)
+
 ## Table of Contents
 - [Features](#features)
 - [Directory Structure](#directory-structure)
@@ -242,14 +244,8 @@ A: Create a new fix issue in the current milestone with a high priority note in 
 ### Q: What if I need to split an issue into multiple issues?
 A: Create new issues and update the original issue to reference them in the Sub-Issues section. Update the original tasks to reflect the split.
 
-### Q: How to handle issues that span multiple milestones?
-A: Create a main story in the earlier milestone and link to implementation issues in subsequent milestones using the Dependencies section.
-
 ### Q: Should I delete completed issues?
 A: No, keep all issues for historical tracking. Use the status markers to indicate completion.
-
-### Q: How to handle recurring tasks?
-A: Create a template issue in the milestone and create new issues with incremented IDs for each occurrence.
 
 ## Contributing
 
