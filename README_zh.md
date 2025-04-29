@@ -1,6 +1,6 @@
-# 本地化问题管理系统
+# 本地问题管理系统
 
-一个结构化的本地问题管理模板系统。该系统提供了一个清晰的、基于文件的方法来跟踪用户故事、功能特性、错误修复和测试。
+一个用于本地管理项目问题的结构化模板系统。该系统提供了一个清晰的、基于文件的方法来跟踪用户故事、功能特性、缺陷和测试。
 
 [English](README.md) | 简体中文
 
@@ -31,7 +31,7 @@
 ## 目录结构
 
 ```
-issues/
+.issues/
 ├── templates/
 │   ├── story.md
 │   └── issue.md
@@ -48,7 +48,7 @@ issues/
 
 - `story`: 描述完整用户价值的用户故事
 - `feat`: 新功能实现
-- `fix`: 错误修复实现
+- `fix`: 缺陷修复实现
 - `test`: 测试实现
 
 ## 问题状态
@@ -61,9 +61,9 @@ issues/
 
 ## 文件命名规范
 
-文件遵循以下命名模式：`{id}-{type}-{description}.md`
+文件遵循以下模式：`{id}-{type}-{description}.md`
 
-- `id`: 在所有问题中唯一的标识符
+- `id`: 在所有问题中全局唯一的标识符
 - `type`: 问题类型 (story/feat/fix/test)
 - `description`: 简短的 kebab-case 描述
 
@@ -117,12 +117,9 @@ issues/
 ## 入门指南
 
 1. 克隆此仓库
-2. 在你的项目中创建 `issues` 目录
-3. 复制 `.cursorrules` 到项目根目录以支持 Cursor 编辑器
-   ```bash
-   cp issues-template/.cursorrules ./.cursorrules
-   ```
-4. 从 `issues-template/templates` 复制模板到 `issues/templates`
+2. 在你的项目中创建 `.issues` 目录
+3. 将 `local-issues.mdc` 复制到你的项目 cursor rules 目录
+4. 从 `issues-template/templates` 复制模板到 `.issues/templates`
 5. 查看 `issues-template/sample` 中的示例以理解结构
 6. 开始按照命名规范和使用模板创建你的问题
 
@@ -130,9 +127,9 @@ issues/
 
 ### 创建新的里程碑
 
-1. 在 `issues/` 下创建新目录，使用模式 `m{number}-{description}`
+1. 在 `.issues/` 下创建新目录，使用模式 `m{number}-{description}`
    ```bash
-   mkdir issues/m001-user-authentication
+   mkdir .issues/m001-user-authentication
    ```
 
 ### 创建问题
@@ -144,7 +141,7 @@ issues/
    - 列出验收标准
    - 添加将要实现此故事的子问题
    ```bash
-   cp issues/templates/story.md issues/m001-user-authentication/001-story-login-system.md
+   cp .issues/templates/story.md .issues/m001-user-authentication/001-story-login-system.md
    ```
 
 2. **功能/修复/测试问题**
@@ -182,7 +179,7 @@ issues/
    ```markdown
    # 依赖关系
    - [ ] 001 父用户故事
-   - [ ] 003 后端API实现
+   - [ ] 002 后端API实现
    ```
 
 2. 在将问题标记为完成前检查依赖关系
@@ -202,7 +199,7 @@ issues/
 - 用户认证故事
 - 登录页面实现
 - 测试套件
-- 错误修复任务
+- 缺陷修复任务
 
 ## 最佳实践
 
@@ -216,11 +213,11 @@ issues/
 ## 编辑器集成
 
 ### Cursor
-- 项目根目录中的 `.cursorrules` 文件使 Cursor 能够理解问题管理结构
+- `local-issues.mdc` 文件在你的项目 cursor rules 目录中使 Cursor 能够理解问题管理结构
 - 使用 Cursor 的 markdown 预览查看问题
 - 利用 Cursor 的文件导航快速切换问题
 - 使用 Cursor 的搜索功能查找相关问题
-- Cursor 将帮助执行 `.cursorrules` 中定义的命名规范和结构
+- Cursor 将帮助执行 `local-issues.mdc` 中定义的命名规范和结构
 
 ### VSCode
 - 安装 Markdown 预览扩展

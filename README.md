@@ -31,7 +31,7 @@ English | [简体中文](README_zh.md)
 ## Directory Structure
 
 ```
-issues/
+.issues/
 ├── templates/
 │   ├── story.md
 │   └── issue.md
@@ -117,12 +117,9 @@ Two standard templates are provided:
 ## Getting Started
 
 1. Clone this repository
-2. Create an `issues` directory in your project
-3. Copy `.cursorrules` to your project root directory for Cursor editor support
-   ```bash
-   cp issues-template/.cursorrules ./.cursorrules
-   ```
-4. Copy the templates from `issues-template/templates` to `issues/templates`
+2. Create an `.issues` directory in your project
+3. Copy `local-issues.mdc` to your project cursor rules directory
+4. Copy the templates from `issues-template/templates` to `.issues/templates`
 5. Review the sample in `issues-template/sample` to understand the structure
 6. Start creating your issues following the naming conventions and using the templates
 
@@ -130,9 +127,9 @@ Two standard templates are provided:
 
 ### Creating a New Milestone
 
-1. Create a new directory under `issues/` with the pattern `m{number}-{description}`
+1. Create a new directory under `.issues/` with the pattern `m{number}-{description}`
    ```bash
-   mkdir issues/m001-user-authentication
+   mkdir .issues/m001-user-authentication
    ```
 
 ### Creating Issues
@@ -144,7 +141,7 @@ Two standard templates are provided:
    - List acceptance criteria
    - Add sub-issues that will implement this story
    ```bash
-   cp issues/templates/story.md issues/m001-user-authentication/001-story-login-system.md
+   cp .issues/templates/story.md .issues/m001-user-authentication/001-story-login-system.md
    ```
 
 2. **Feature/Fix/Test Issues**
@@ -182,7 +179,7 @@ Two standard templates are provided:
    ```markdown
    # Dependencies
    - [ ] 001 Parent user story
-   - [ ] 003 Backend API implementation
+   - [ ] 002 Backend API implementation
    ```
 
 2. Check dependencies before marking an issue as complete
@@ -216,11 +213,11 @@ Check out the sample implementation in `issues-template/sample/m001-auth-system/
 ## Editor Integration
 
 ### Cursor
-- The `.cursorrules` file in your project root enables Cursor to understand the issue management structure
+- The `local-issues.mdc` file in your project cursor rules directory enables Cursor to understand the issue management structure
 - Use Cursor's markdown preview to view issues
 - Utilize Cursor's file navigation to quickly switch between issues
 - Use Cursor's search functionality to find related issues
-- Cursor will help enforce naming conventions and structure defined in `.cursorrules`
+- Cursor will help enforce naming conventions and structure defined in `local-issues.mdc`
 
 ### VSCode
 - Install a Markdown preview extension
